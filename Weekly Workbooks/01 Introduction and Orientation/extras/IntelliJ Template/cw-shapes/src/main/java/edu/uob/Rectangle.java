@@ -13,11 +13,17 @@ public class Rectangle extends TwoDimensionalShape {
     return width * height;
   }
 
+
+
   public int calculatePerimeterLength() {
     return 2 * (width + height);
   }
 
+  //public String toString() {
+    //return "Rectangle of dimensions " + width + " x " + height;
+  //}
+
   public String toString() {
-    return "Rectangle of dimensions " + width + " x " + height;
+    return super.toString();
   }
 }

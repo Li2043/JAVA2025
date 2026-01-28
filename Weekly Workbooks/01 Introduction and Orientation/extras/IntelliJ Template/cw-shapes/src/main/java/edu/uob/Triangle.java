@@ -12,6 +12,10 @@ public class Triangle extends TwoDimensionalShape{
     this.length2 = length2;
     this.length3 = length3;
   }
+  public enum triangleType {
+    X1, X2,.;
+  }
+
   public int getLongestSide(){
     int max;
     if (length1 > length2){
@@ -38,8 +42,12 @@ public class Triangle extends TwoDimensionalShape{
   public int calculatePerimeterLength() {
     return 0;
   }
-  @override
+
+  //public String toString() {
+    //Colour a = this.getShapeColor();
+    //return "This is a " + a + "Triangle with length1: " + length1 +  length2 + length3;
+  //}
   public String toString() {
-    return "Triangle with length1: " + length1 + " Triangle with length2: " + length2 + " Triangle with length3: " + length3;
+    return super.toString();
   }
 }

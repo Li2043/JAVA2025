@@ -15,7 +15,10 @@ public class Circle extends TwoDimensionalShape {
     return (int) Math.round(Math.PI * radius * 2.0);
   }
 
+  //public String toString() {
+    //return "Circle with radius " + radius;
+  //}
   public String toString() {
-    return "Circle with radius " + radius;
+    return super.toString();
   }
 }
