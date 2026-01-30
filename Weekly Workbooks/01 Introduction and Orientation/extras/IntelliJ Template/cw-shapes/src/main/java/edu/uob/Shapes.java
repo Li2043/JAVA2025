@@ -20,8 +20,18 @@ public class Shapes {
     testTriangle.setShapeColor(Colour.GREEN);
     System.out.println(testTriangle);
 
-    Rectangle testRectangle = new Rectangle(6,7);
+    Rectangle testRectangle = new Rectangle(6, 7);
     testRectangle.setShapeColor(Colour.BLUE);
     System.out.println(testRectangle);
+
+
+    //task 6 enum
+    Triangle triangle1 = new Triangle(5, 5, 5);
+    Triangle triangle2 = new Triangle(6, 6, 6);
+    Triangle triangle3 = new Triangle(7, 7, 7);
+    System.out.println(triangle1.getVariant());
+    System.out.println(triangle2.getVariant());
+    System.out.println(triangle3.getVariant());
   }
 }
+

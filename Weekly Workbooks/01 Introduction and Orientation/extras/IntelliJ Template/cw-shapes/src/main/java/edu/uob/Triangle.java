@@ -12,9 +12,7 @@ public class Triangle extends TwoDimensionalShape{
     this.length2 = length2;
     this.length3 = length3;
   }
-  public enum triangleType {
-    X1, X2,.;
-  }
+
 
   public int getLongestSide(){
     int max;
@@ -43,11 +41,43 @@ public class Triangle extends TwoDimensionalShape{
     return 0;
   }
 
-  //public String toString() {
-    //Colour a = this.getShapeColor();
-    //return "This is a " + a + "Triangle with length1: " + length1 +  length2 + length3;
-  //}
   public String toString() {
     return super.toString();
   }
-}
+
+  public TriangleVariant getVariant(){
+    long a = length1;
+    long b = length2;
+    long c = length3;
+    if (length1 <= 0 || length2 <= 0 || length3 <= 0){
+      return TriangleVariant.ILLEGAL;
+    }
+    else if (length1 < length3 - length2
+            || length1 < length2 - length3
+              || length2 < length1 - length3) {
+        return TriangleVariant.IMPOSSIBLE;
+      }
+    else if (length1 == length3 - length2
+              || length1 == length2 - length3
+              || length2 == length1 - length3) {
+        return TriangleVariant.FLAT;
+      }
+    else if (length1 == length2 && length1 == length3) {
+        return TriangleVariant.EQUILATERAL;
+      }
+    else if (length1 == length2  || length1 == length3  || length2 == length3 ) {
+        return TriangleVariant.ISOSCELES;
+      }
+    else if (a*a + b*b == c*c
+            || a*a + c*c == b*b
+            || b*b + c*c == a*a) {
+        return TriangleVariant.RIGHT;
+      }
+    else {
+        return TriangleVariant.SCALENE;
+      }
+    }
+  }
+
+
+
