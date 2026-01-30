@@ -1,5 +1,6 @@
 package edu.uob;
 
+
 public class Triangle extends TwoDimensionalShape{
   int length1;
   int length2;
@@ -30,54 +31,50 @@ public class Triangle extends TwoDimensionalShape{
       return length3;
     }
   }
-
-  // TODO implement me!
+  //week3 task2
+  // TODO implement me! 算面积
+  @Override
   public double calculateArea() {
-    return 0;
+    double p = (double) (length1 + length3 + length2) / 2;
+    return Math.sqrt(p * (p - length1) * (p - length2) * (p - length3));
   }
-
-  // TODO implement me!
+  @Override
+  // TODO implement me! 算周长
   public int calculatePerimeterLength() {
-    return 0;
+    return length1 + length3 + length2;
   }
 
   public String toString() {
     return super.toString();
   }
 
-  public TriangleVariant getVariant(){
+  public TriangleVariant getVariant() {
     long a = length1;
     long b = length2;
     long c = length3;
-    if (length1 <= 0 || length2 <= 0 || length3 <= 0){
+    if (length1 <= 0 || length2 <= 0 || length3 <= 0) {
       return TriangleVariant.ILLEGAL;
-    }
-    else if (length1 < length3 - length2
+    } else if (length1 < length3 - length2
             || length1 < length2 - length3
-              || length2 < length1 - length3) {
-        return TriangleVariant.IMPOSSIBLE;
-      }
-    else if (length1 == length3 - length2
-              || length1 == length2 - length3
-              || length2 == length1 - length3) {
-        return TriangleVariant.FLAT;
-      }
-    else if (length1 == length2 && length1 == length3) {
-        return TriangleVariant.EQUILATERAL;
-      }
-    else if (length1 == length2  || length1 == length3  || length2 == length3 ) {
-        return TriangleVariant.ISOSCELES;
-      }
-    else if (a*a + b*b == c*c
-            || a*a + c*c == b*b
-            || b*b + c*c == a*a) {
-        return TriangleVariant.RIGHT;
-      }
-    else {
-        return TriangleVariant.SCALENE;
-      }
+            || length2 < length1 - length3) {
+      return TriangleVariant.IMPOSSIBLE;
+    } else if (length1 == length3 - length2
+            || length1 == length2 - length3
+            || length2 == length1 - length3) {
+      return TriangleVariant.FLAT;
+    } else if (length1 == length2 && length1 == length3) {
+      return TriangleVariant.EQUILATERAL;
+    } else if (length1 == length2 || length1 == length3 || length2 == length3) {
+      return TriangleVariant.ISOSCELES;
+    } else if (a * a + b * b == c * c
+            || a * a + c * c == b * b
+            || b * b + c * c == a * a) {
+      return TriangleVariant.RIGHT;
+    } else {
+      return TriangleVariant.SCALENE;
     }
   }
+}
 
 
 
